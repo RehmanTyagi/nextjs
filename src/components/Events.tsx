@@ -97,15 +97,15 @@ const Events = () => {
     <div className="bg-[#00684A]">
       <div className="container mx-auto p-2.5 gap-3 flex items-center">
         {/* Slider */}
-        <Swiper onSwiper={handleSwiperInit} fadeEffect={{ crossFade: true }} speed={1000} slidesPerView={1} modules={[Autoplay, Navigation, EffectFade]} autoplay effect="fade">
+        <Swiper onSwiper={handleSwiperInit} fadeEffect={{ crossFade: true }} modules={[Autoplay, Navigation, EffectFade]} slidesPerView={1} effect="fade" autoplay>
           {dummyData.map((item, index) => (
             <SwiperSlide key={index}>
-              <Link href={item.link} className="flex w-fit items-center gap-1.5 overflow-hidden">
-                <span className="bg-[#B1FF05] text-green-900 text-xs font-bold p-0.5 px-2 mr-1 rounded">{item.type}</span>
-                <p className="text-white text-xs w-2/6 sm:w-auto font-mono whitespace-nowrap text-ellipsis overflow-hidden">
+              <Link href={item.link} className="flex items-center gap-1.5 max-w-fit">
+                <span className="bg-[#B1FF05] hidden md:block mr-2 text-green-900 text-xs font-bold p-0.5 px-2 rounded">{item.type}</span>
+                <p className="text-white text-[10px] md:text-xs font-mono whitespace-nowrap text-ellipsis overflow-hidden">
                   {item.description}
                 </p>
-                <p className="text-[12px] font-bold min-w-max text-amber-300 underline">{item.btnText}</p>
+                <p className="text-xs font-bold min-w-max text-amber-300 underline">{item.btnText}</p>
               </Link>
             </SwiperSlide>
           ))}
